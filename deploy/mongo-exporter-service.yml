@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mongo-exporter
+spec:
+  type: LoadBalancer
+  # loadBalancerIP: 35.227.124.115
+  selector:
+    app: mongo-exporter
+  ports:
+  - protocol: TCP
+    port: 8080
