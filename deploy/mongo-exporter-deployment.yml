@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mongo-exporter
+  labels: {app: mongo-exporter}
+spec:
+  replicas: 1
+  template:
+    metadata: {labels: {app: mongo-exporter}}
+    spec:
+      containers:
+      - name: mongo-exporter
+        image: shotcounterapp/mongo-exporter
+        command:
+        ports:
+          - containerPort: 8080
